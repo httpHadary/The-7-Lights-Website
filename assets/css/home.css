@@ -1408,6 +1408,32 @@ body,
     margin-bottom: 20px;
 }
 
+/* ==============================
+   About Us - Mobile Responsive
+================================ */
+
+@media (max-width: 768px) {
+
+    .about-image {
+        display: none;
+    }
+
+    .about-text {
+        width: 100%;
+        text-align: right;
+    }
+
+    .about-content {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .about-text p {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+}
+
 /* ==============================================================
    # Portfolio & Services
 ================================================================ */
@@ -1532,6 +1558,22 @@ body,
 .pf-item {
 	all: unset;
 	display: contents;
+}
+
+/* ==============================
+   Portfolio - Mobile Layout
+================================ */
+
+@media (max-width: 576px) {
+
+    .portfolio-section .card-item,
+	.services-section .card-item  {
+        width: 100%;
+    }
+
+    .cards-grid {
+        gap: 20px;
+    }
 }
 
 /* ============================================================== 
@@ -1768,6 +1810,44 @@ body,
 .social-row a:hover {
 	background: #0f2d4f;
 	transform: translateY(-2px);
+}
+
+/* ==============================
+   Contact Section - Mobile Layout
+================================ */
+
+@media (max-width: 768px) {
+    .contact-row {
+        flex-direction: column;
+    }
+
+    .contact-links {
+        padding: 0 15px;
+    }
+
+    .contact-row > .col-md-5,
+    .contact-row > .col-md-7 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-row > .col-md-7 {
+        order: 1;
+        padding-left: 0;
+        margin-bottom: 25px;
+    }
+
+    .contact-row > .col-md-5 {
+        order: 2;
+    }
+
+	.contact-card {
+        margin-left: 20px;
+    }
+
+    .google-maps {
+        height: 300px;
+    }
 }
 
 /* ============================================================== 

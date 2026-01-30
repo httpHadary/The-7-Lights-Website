@@ -353,6 +353,50 @@ $('.popup-service, .popup-portfolio').magnificPopup({
     midClick: true,
     closeBtnInside: true,
     fixedContentPos: true,
-    focus: false
+    focus: false,
+
+    mainClass: 'mfp-zoom-in',
+    removalDelay: 300
 });
 
+// ==============================
+// Page Transitions
+// ==============================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Fade in on load
+    document.body.classList.add("page-loaded");
+
+    // Intercept link clicks
+    document.querySelectorAll("a[href]").forEach(link => {
+
+        link.addEventListener("click", function (e) {
+
+            const href = this.getAttribute("href");
+
+            // Ignore anchors, popups, new tabs
+            if (
+                href.startsWith("#") ||
+                this.target === "_blank" ||
+                this.classList.contains("popup-portfolio") ||
+                this.classList.contains("popup-service")
+            ) {
+                return;
+            }
+
+            e.preventDefault();
+
+            document.body.classList.remove("page-loaded");
+            document.body.classList.add("page-leaving");
+
+            // Wait for animation
+            setTimeout(() => {
+                window.location.href = href;
+            }, 400);
+
+        });
+
+    });
+
+});

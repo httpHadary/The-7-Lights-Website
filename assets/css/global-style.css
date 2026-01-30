@@ -1,0 +1,45 @@
+/* ==============================
+   Page Transition
+================================ */
+
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* When page is loaded */
+body.page-loaded {
+    opacity: 1;
+}
+
+/* When leaving page */
+body.page-leaving {
+    opacity: 0;
+}
+
+/* ==============================
+   Popup Animation (Zoom + Fade)
+================================ */
+
+.mfp-zoom-in {
+
+    /* Start state */
+    .mfp-with-anim {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Animate in */
+    &.mfp-ready .mfp-with-anim {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Animate out */
+    &.mfp-removing .mfp-with-anim {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+}
